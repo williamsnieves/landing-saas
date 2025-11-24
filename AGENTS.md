@@ -6,7 +6,7 @@
 **Tech Stack**: Astro + TailwindCSS  
 **Deployment**: GitHub Pages  
 **Testing**: Playwright E2E  
-**Form Integration**: Formspree  
+**Form Integration**: Formspree
 
 This document establishes the foundational rules, best practices, and technical objectives for building a professional landing page for a B2B SaaS focused on remote team management.
 
@@ -17,26 +17,31 @@ This document establishes the foundational rules, best practices, and technical 
 ### 1.1 SOLID Principles
 
 #### Single Responsibility Principle (SRP)
+
 - Each component should have one clear purpose
 - Separate concerns: presentation, logic, and data handling
 - Example: `Hero.astro` handles only hero section rendering, not form submission
 
 #### Open/Closed Principle (OCP)
+
 - Components should be open for extension but closed for modification
 - Use props and slots for customization
 - Create base components that can be extended without altering core functionality
 
 #### Liskov Substitution Principle (LSP)
+
 - Derived components must be substitutable for their base components
 - Maintain consistent interfaces across similar components
 - Props should have predictable behavior across component variants
 
 #### Interface Segregation Principle (ISP)
+
 - Components should not depend on props they don't use
 - Create focused, minimal prop interfaces
 - Split large components into smaller, specialized ones
 
 #### Dependency Inversion Principle (DIP)
+
 - Depend on abstractions (interfaces/types) rather than concrete implementations
 - Use TypeScript interfaces for component props
 - Decouple components from specific data sources
@@ -92,6 +97,7 @@ landing-saas/
 ### 2.2 TypeScript Configuration
 
 - Extend Astro's base TypeScript config:
+
 ```json
 {
   "extends": "astro/tsconfigs/base"
@@ -99,6 +105,7 @@ landing-saas/
 ```
 
 - Configure import aliases for cleaner imports:
+
 ```json
 {
   "compilerOptions": {
@@ -116,11 +123,13 @@ landing-saas/
 - **`.astro` files**: Use for static content and server-side rendering
 - **Framework components**: Only when client-side interactivity is required
 - **Component structure**:
+
   ```astro
   ---
   // Component Script (TypeScript)
   // Runs at build time on the server
   ---
+
   <!-- Component Template (HTML + expressions) -->
   ```
 
@@ -148,7 +157,7 @@ landing-saas/
 - **Integration**: Use official `@astrojs/tailwind` integration
 - **Global styles**: Import Tailwind in `src/styles/global.css`:
   ```css
-  @import "tailwindcss";
+  @import 'tailwindcss';
   ```
 - **Config file**: `tailwind.config.mjs` for customization
 
@@ -184,14 +193,14 @@ xl: '1280px'  // Large desktop
 
 ### 4.2 Naming Conventions
 
-| Type | Convention | Example |
-|------|-----------|---------|
-| Components | PascalCase | `Hero.astro`, `ContactForm.astro` |
-| Functions | camelCase | `formatDate()`, `validateEmail()` |
-| Variables | camelCase | `userName`, `isActive` |
-| Constants | UPPER_SNAKE_CASE | `MAX_ITEMS`, `API_URL` |
-| Page files | kebab-case | `index.astro`, `about.astro` |
-| CSS classes | kebab-case | `hero-section`, `cta-button` |
+| Type        | Convention       | Example                           |
+| ----------- | ---------------- | --------------------------------- |
+| Components  | PascalCase       | `Hero.astro`, `ContactForm.astro` |
+| Functions   | camelCase        | `formatDate()`, `validateEmail()` |
+| Variables   | camelCase        | `userName`, `isActive`            |
+| Constants   | UPPER_SNAKE_CASE | `MAX_ITEMS`, `API_URL`            |
+| Page files  | kebab-case       | `index.astro`, `about.astro`      |
+| CSS classes | kebab-case       | `hero-section`, `cta-button`      |
 
 ### 4.3 Code Documentation
 
@@ -234,6 +243,7 @@ xl: '1280px'  // Large desktop
 ### 5.3 Commit Messages
 
 Follow conventional commits format:
+
 ```
 type(scope): description
 
@@ -265,32 +275,38 @@ tests/
 ### 6.2 Test Scenarios
 
 #### Hero Section
+
 - Verify hero heading and subheading are visible
 - Test CTA button is clickable and navigates correctly
 - Check responsive layout on mobile/tablet/desktop
 
 #### Features Section
+
 - Validate all feature cards render correctly
 - Check icons/images load properly
 - Test responsive grid layout
 
 #### Pricing Section
+
 - Verify all pricing tiers display correctly
 - Test interactive elements (buttons, toggles if any)
 - Validate pricing information accuracy
 
 #### FAQ Section
+
 - Test accordion expand/collapse functionality
 - Verify all FAQ items are accessible
 - Check keyboard navigation
 
 #### Contact Form
+
 - Test form field validation
 - Verify successful submission flow
 - Test error handling for invalid inputs
 - Check Formspree integration
 
 #### Navigation & Responsive Behavior
+
 - Test mobile menu toggle
 - Verify smooth scrolling to sections
 - Test responsive breakpoints
@@ -311,30 +327,30 @@ tests/
 
 ```yaml
 1. Install
-   - Checkout code
-   - Setup Node.js
-   - Cache dependencies
-   - Install dependencies
+- Checkout code
+- Setup Node.js
+- Cache dependencies
+- Install dependencies
 
 2. Lint
-   - Run ESLint
-   - Run Prettier check
-   - Fail if linting errors
+- Run ESLint
+- Run Prettier check
+- Fail if linting errors
 
 3. Build
-   - Run Astro build
-   - Verify build success
-   - Cache build artifacts
+- Run Astro build
+- Verify build success
+- Cache build artifacts
 
 4. Test
-   - Install Playwright browsers
-   - Run E2E tests
-   - Upload test results
+- Install Playwright browsers
+- Run E2E tests
+- Upload test results
 
 5. Deploy
-   - Deploy to GitHub Pages
-   - Only if all previous steps pass
-   - Update deployment status
+- Deploy to GitHub Pages
+- Only if all previous steps pass
+- Update deployment status
 ```
 
 ### 7.2 Configuration Requirements
@@ -362,6 +378,7 @@ tests/
 ### 8.1 Performance
 
 **Target Metrics**:
+
 - Lighthouse Performance Score: > 90
 - First Contentful Paint (FCP): < 1.5s
 - Largest Contentful Paint (LCP): < 2.5s
@@ -370,6 +387,7 @@ tests/
 - Total Blocking Time (TBT): < 300ms
 
 **Optimization Strategies**:
+
 - Optimize images (WebP format, responsive sizes)
 - Minimize JavaScript bundle
 - Leverage browser caching
@@ -380,6 +398,7 @@ tests/
 ### 8.2 SEO
 
 **Required Elements**:
+
 - **Meta tags**: Title, description, keywords
 - **Open Graph tags**: For social media sharing
   ```html
@@ -398,6 +417,7 @@ tests/
 ### 8.3 Accessibility
 
 **WCAG 2.1 AA Compliance**:
+
 - Semantic HTML5 elements
 - ARIA labels and roles where needed
 - Keyboard navigation support (Tab, Enter, Escape)
@@ -412,6 +432,7 @@ tests/
 ### 8.4 Code Quality
 
 **Standards**:
+
 - TypeScript for type safety
 - Component modularity (single responsibility)
 - Reusable utility functions
@@ -424,6 +445,7 @@ tests/
 ### 8.5 Responsive Design
 
 **Approach**:
+
 - Mobile-first development
 - Fluid typography and spacing
 - Flexible grid layouts
@@ -432,6 +454,7 @@ tests/
 - Test on real devices when possible
 
 **Breakpoints**:
+
 - Mobile: 320px - 639px
 - Tablet: 640px - 1023px
 - Desktop: 1024px+
@@ -519,9 +542,10 @@ landing-saas/
 **Endpoint Format**: `https://formspree.io/f/{form_id}`
 
 **Basic Implementation**:
+
 ```html
 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-  <input type="email" name="email" required>
+  <input type="email" name="email" required />
   <textarea name="message" required></textarea>
   <button type="submit">Send</button>
 </form>
@@ -538,11 +562,13 @@ landing-saas/
 ### 10.4 Success/Error Handling
 
 **Success**:
+
 - Redirect to thank you page or show success message
 - Clear form fields
 - Display confirmation to user
 
 **Error**:
+
 - Show user-friendly error message
 - Preserve form data
 - Provide retry option
@@ -679,7 +705,6 @@ This document serves as the single source of truth for all development decisions
 
 ---
 
-*Document Version: 1.0*  
-*Last Updated: November 22, 2025*  
-*Status: Awaiting Approval*
-
+_Document Version: 1.0_  
+_Last Updated: November 22, 2025_  
+_Status: Awaiting Approval_

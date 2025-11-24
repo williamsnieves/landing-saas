@@ -1,21 +1,21 @@
 /* Google Fonts - Must be imported first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Base Styles */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -24,11 +24,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Poppins', system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-    outline: 2px solid #0ea5e9;
-    outline-offset: 2px;
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
 }

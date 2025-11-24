@@ -6,59 +6,82 @@ import { PRICING_TIERS } from '@utils/constants';
   <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-20">
-      <h2 class="text-base font-semibold text-blue-600 tracking-wide uppercase mb-3">Pricing</h2>
-      <p class="text-4xl font-bold text-gray-900 mb-6">Simple, transparent pricing</p>
+      <h2
+        class="text-base font-semibold text-blue-600 tracking-wide uppercase mb-3"
+      >
+        Pricing
+      </h2>
+      <p class="text-4xl font-bold text-gray-900 mb-6">
+        Simple, transparent pricing
+      </p>
       <p class="text-xl text-gray-600 leading-relaxed">
-        Choose the plan that's right for your team. No hidden fees, cancel anytime.
+        Choose the plan that's right for your team. No hidden fees, cancel
+        anytime.
       </p>
     </div>
 
     <!-- Pricing Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {PRICING_TIERS.map((tier) => (
-        <div class={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
-          tier.popular 
-            ? 'bg-white border-2 border-blue-500 shadow-xl scale-105 z-10' 
-            : 'bg-gray-50 border border-gray-200 hover:border-blue-200 hover:shadow-lg'
-        }`}>
-          {tier.popular && (
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md whitespace-nowrap">
-              Most Popular
-            </div>
-          )}
-
-          <div class="mb-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-            <p class="text-sm text-gray-500 mb-6">{tier.description}</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-gray-900">{tier.price}</span>
-              <span class="text-gray-500">/{tier.period}</span>
-            </div>
-          </div>
-
-          <ul class="space-y-4 mb-8 flex-1">
-            {tier.features.map((feature) => (
-              <li class="flex items-start gap-3 text-gray-600">
-                <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.popular ? 'text-blue-600' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-sm">{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href={tier.cta === 'Contact Sales' ? '#contact' : '#get-started'}
-            class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+      {
+        PRICING_TIERS.map((tier) => (
+          <div
+            class={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
               tier.popular
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg'
-                : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                ? 'bg-white border-2 border-blue-500 shadow-xl scale-105 z-10'
+                : 'bg-gray-50 border border-gray-200 hover:border-blue-200 hover:shadow-lg'
             }`}
           >
-            {tier.cta}
-          </a>
-        </div>
-      ))}
+            {tier.popular && (
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md whitespace-nowrap">
+                Most Popular
+              </div>
+            )}
+
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
+              <p class="text-sm text-gray-500 mb-6">{tier.description}</p>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-bold text-gray-900">
+                  {tier.price}
+                </span>
+                <span class="text-gray-500">/{tier.period}</span>
+              </div>
+            </div>
+
+            <ul class="space-y-4 mb-8 flex-1">
+              {tier.features.map((feature) => (
+                <li class="flex items-start gap-3 text-gray-600">
+                  <svg
+                    class={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.popular ? 'text-blue-600' : 'text-gray-400'}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={tier.cta === 'Contact Sales' ? '#contact' : '#get-started'}
+              class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                tier.popular
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+              }`}
+            >
+              {tier.cta}
+            </a>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
