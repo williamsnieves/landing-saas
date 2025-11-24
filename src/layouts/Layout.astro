@@ -1,0 +1,88 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '@utils/constants';
+import '@styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const { 
+  title = SITE_TITLE, 
+  description = SITE_DESCRIPTION,
+  image = `${SITE_URL}/images/og-image.png`,
+  canonical = Astro.url.pathname
+} = Astro.props;
+
+const canonicalURL = new URL(canonical, SITE_URL).href;
+
+// JSON-LD Structured Data
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TeamSync",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "1250"
+  },
+  "description": description,
+  "url": SITE_URL,
+  "operatingSystem": "Web, iOS, Android"
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="remote team management, collaboration software, team productivity, project management, video conferencing, task management" />
+    <meta name="author" content="TeamSync" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/landing-saas/favicon.svg" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0ea5e9" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="TeamSync" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:creator" content="@teamsync" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-white text-gray-900">
+    <slot />
+  </body>
+</html>
