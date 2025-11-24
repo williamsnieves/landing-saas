@@ -14,11 +14,16 @@ export default [
                 ecmaVersion: 'latest',
                 sourceType: 'module',
             },
+            globals: {
+                process: 'readonly',
+                console: 'readonly',
+            },
         },
         rules: {
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'prefer-const': 'error',
             'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+            'no-undef': 'off', // TypeScript handles this
         },
     },
     {

@@ -170,7 +170,7 @@
         } else {
           throw new Error('Form submission failed');
         }
-      } catch (error) {
+      } catch {
         // Show error message
         formStatus?.classList.remove('hidden');
         errorMessage?.classList.remove('hidden');
