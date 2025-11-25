@@ -9,7 +9,10 @@ const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="contact" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
+<section
+  id="contact"
+  class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300"
+>
   <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
     <!-- Section Header -->
     <div class="text-center mb-16">
@@ -18,14 +21,18 @@ const t = useTranslations(lang);
       >
         {t('contact.badge')}
       </h2>
-      <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.title')}</p>
+      <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        {t('contact.title')}
+      </p>
       <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
         {t('contact.subtitle')}
       </p>
     </div>
 
     <!-- Contact Form -->
-    <div class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 lg:p-12 border border-gray-200 dark:border-gray-700">
+    <div
+      class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 lg:p-12 border border-gray-200 dark:border-gray-700"
+    >
       <form
         id="contact-form"
         action="https://formspree.io/f/YOUR_FORM_ID"
@@ -38,7 +45,8 @@ const t = useTranslations(lang);
             for="name"
             class="block text-sm font-semibold text-gray-900 dark:text-white mb-2"
           >
-            {t('contact.form.name')} <span class="text-red-500">*</span>
+            {t('contact.form.name')}
+            <span class="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -56,7 +64,8 @@ const t = useTranslations(lang);
             for="email"
             class="block text-sm font-semibold text-gray-900 dark:text-white mb-2"
           >
-            {t('contact.form.email')} <span class="text-red-500">*</span>
+            {t('contact.form.email')}
+            <span class="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -91,7 +100,8 @@ const t = useTranslations(lang);
             for="message"
             class="block text-sm font-semibold text-gray-900 mb-2"
           >
-            {t('contact.form.message')} <span class="text-red-500">*</span>
+            {t('contact.form.message')}
+            <span class="text-red-500">*</span>
           </label>
           <textarea
             id="message"
@@ -213,7 +223,8 @@ const t = useTranslations(lang);
       // Disable submit button
       submitButton.disabled = true;
       if (submitText) {
-        submitText.textContent = submitButton.getAttribute('data-sending-text') || 'Sending...';
+        submitText.textContent =
+          submitButton.getAttribute('data-sending-text') || 'Sending...';
       }
 
       // Hide previous messages
@@ -247,7 +258,8 @@ const t = useTranslations(lang);
         // Re-enable submit button
         submitButton.disabled = false;
         if (submitText) {
-          submitText.textContent = submitButton.getAttribute('data-default-text') || 'Send Message';
+          submitText.textContent =
+            submitButton.getAttribute('data-default-text') || 'Send Message';
         }
       }
     });

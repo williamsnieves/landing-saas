@@ -58,7 +58,10 @@ const pricingTiers = [
 ];
 ---
 
-<section id="pricing" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
+<section
+  id="pricing"
+  class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300"
+>
   <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-20">
@@ -93,13 +96,19 @@ const pricingTiers = [
             )}
 
             <div class="mb-8">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{tier.name}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">{tier.description}</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                {tier.name}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                {tier.description}
+              </p>
               <div class="flex items-baseline gap-1">
                 <span class="text-4xl font-bold text-gray-900 dark:text-white">
                   {tier.price}
                 </span>
-                <span class="text-gray-500 dark:text-gray-400">/{tier.period}</span>
+                <span class="text-gray-500 dark:text-gray-400">
+                  /{tier.period}
+                </span>
               </div>
             </div>
 
@@ -125,7 +134,11 @@ const pricingTiers = [
             </ul>
 
             <a
-              href={tier.cta === t('pricing.enterprise.cta') ? '#contact' : '#get-started'}
+              href={
+                tier.cta === t('pricing.enterprise.cta')
+                  ? '#contact'
+                  : '#get-started'
+              }
               class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 tier.popular
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg'

@@ -3,11 +3,13 @@ import LandingPage from '@components/LandingPage.astro';
 import { languages } from '@i18n/translations';
 
 export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => {
-    // Skip default language (en) as it's handled by src/pages/index.astro
-    if (lang === 'en') return null;
-    return { params: { lang } };
-  }).filter(Boolean);
+  return Object.keys(languages)
+    .map((lang) => {
+      // Skip default language (en) as it's handled by src/pages/index.astro
+      if (lang === 'en') return null;
+      return { params: { lang } };
+    })
+    .filter(Boolean);
 }
 
 const { lang } = Astro.params;

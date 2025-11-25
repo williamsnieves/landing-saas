@@ -12,13 +12,15 @@ const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 
 // Translate nav links for Product section
-const productLinks = NAV_LINKS.map(link => ({
+const productLinks = NAV_LINKS.map((link) => ({
   ...link,
   label: t(`nav.${link.label.toLowerCase()}` as any) || link.label,
 }));
 ---
 
-<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 pt-16 pb-8 transition-colors duration-300">
+<footer
+  class="bg-gray-900 dark:bg-gray-950 text-gray-300 pt-16 pb-8 transition-colors duration-300"
+>
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <!-- Main Footer Content -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -82,7 +84,9 @@ const productLinks = NAV_LINKS.map(link => ({
 
       <!-- Product Links -->
       <div>
-        <h3 class="text-white font-semibold text-lg mb-4">{t('footer.product')}</h3>
+        <h3 class="text-white font-semibold text-lg mb-4">
+          {t('footer.product')}
+        </h3>
         <ul class="space-y-3">
           {
             productLinks.map((link) => (
@@ -101,7 +105,9 @@ const productLinks = NAV_LINKS.map(link => ({
 
       <!-- Company Links -->
       <div>
-        <h3 class="text-white font-semibold text-lg mb-4">{t('footer.company')}</h3>
+        <h3 class="text-white font-semibold text-lg mb-4">
+          {t('footer.company')}
+        </h3>
         <ul class="space-y-3">
           <li>
             <a
@@ -140,7 +146,9 @@ const productLinks = NAV_LINKS.map(link => ({
 
       <!-- Legal Links -->
       <div>
-        <h3 class="text-white font-semibold text-lg mb-4">{t('footer.legal')}</h3>
+        <h3 class="text-white font-semibold text-lg mb-4">
+          {t('footer.legal')}
+        </h3>
         <ul class="space-y-3">
           <li>
             <a

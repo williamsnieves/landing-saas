@@ -35,6 +35,7 @@ npm run translate
 ```
 
 El script:
+
 - ✅ Lee el archivo fuente (`en.json`)
 - ✅ Compara con todos los demás idiomas
 - ✅ Traduce automáticamente las claves faltantes
@@ -48,13 +49,13 @@ Edita `src/i18n/translations.ts`:
 
 ```typescript
 export const languages = {
-    en: 'English',
-    es: 'Español',
-    de: 'Deutsch',
-    pt: 'Português',
-    fr: 'Français',
-    zh: '中文',
-    it: 'Italiano',  // ← Nuevo idioma
+  en: 'English',
+  es: 'Español',
+  de: 'Deutsch',
+  pt: 'Português',
+  fr: 'Français',
+  zh: '中文',
+  it: 'Italiano', // ← Nuevo idioma
 };
 ```
 
@@ -80,7 +81,7 @@ npm run translate
 {
   "nav.features": "Features",
   "nav.pricing": "Pricing",
-  "nav.newSection": "New Section"  // ← Nueva clave
+  "nav.newSection": "New Section" // ← Nueva clave
 }
 ```
 
@@ -121,6 +122,7 @@ sección.subsección.elemento
 ```
 
 Ejemplos:
+
 - `nav.features` → Navegación: Features
 - `hero.title.start` → Hero: Título (parte 1)
 - `pricing.pro.name` → Pricing: Plan Pro (nombre)
@@ -137,6 +139,7 @@ Ejemplos:
 ### Error: "DEEPL_API_KEY not found"
 
 Asegúrate de que:
+
 1. Existe el archivo `.env` en la raíz del proyecto
 2. La clave está correctamente escrita: `DEEPL_API_KEY=...`
 3. No hay espacios alrededor del `=`

@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Translate links
-const links = NAV_LINKS.map(link => ({
+const links = NAV_LINKS.map((link) => ({
   ...link,
   label: t(`nav.${link.label.toLowerCase()}` as any) || link.label,
   // Ensure href keeps the anchor but respects the current page if needed.
@@ -29,7 +29,10 @@ const links = NAV_LINKS.map(link => ({
     <div class="flex items-center justify-between h-20">
       <!-- Logo - Left Side -->
       <div class="flex-shrink-0">
-        <a href={lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`} class="flex items-center gap-3 group">
+        <a
+          href={lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}/`}
+          class="flex items-center gap-3 group"
+        >
           <div class="relative">
             <div
               class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl blur-md opacity-60 group-hover:opacity-80 transition-opacity"
@@ -41,7 +44,11 @@ const links = NAV_LINKS.map(link => ({
               <span class="text-white font-bold text-xl">T</span>
             </div>
           </div>
-          <span class="text-2xl font-bold text-gray-900 dark:text-white transition-colors"> TeamSync </span>
+          <span
+            class="text-2xl font-bold text-gray-900 dark:text-white transition-colors"
+          >
+            TeamSync
+          </span>
         </a>
       </div>
 
