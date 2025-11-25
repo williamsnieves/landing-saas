@@ -2,19 +2,19 @@
 import { PRICING_TIERS } from '@utils/constants';
 ---
 
-<section id="pricing" class="py-24 bg-white relative overflow-hidden">
+<section id="pricing" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-20">
       <h2
-        class="text-base font-semibold text-blue-600 tracking-wide uppercase mb-3"
+        class="text-base font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase mb-3"
       >
         Pricing
       </h2>
-      <p class="text-4xl font-bold text-gray-900 mb-6">
+      <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
         Simple, transparent pricing
       </p>
-      <p class="text-xl text-gray-600 leading-relaxed">
+      <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
         Choose the plan that's right for your team. No hidden fees, cancel
         anytime.
       </p>
@@ -27,8 +27,8 @@ import { PRICING_TIERS } from '@utils/constants';
           <div
             class={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
               tier.popular
-                ? 'bg-white border-2 border-blue-500 shadow-xl scale-105 z-10'
-                : 'bg-gray-50 border border-gray-200 hover:border-blue-200 hover:shadow-lg'
+                ? 'bg-white dark:bg-gray-800 border-2 border-blue-500 shadow-xl scale-105 z-10'
+                : 'bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-lg'
             }`}
           >
             {tier.popular && (
@@ -38,19 +38,19 @@ import { PRICING_TIERS } from '@utils/constants';
             )}
 
             <div class="mb-8">
-              <h3 class="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-              <p class="text-sm text-gray-500 mb-6">{tier.description}</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{tier.name}</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">{tier.description}</p>
               <div class="flex items-baseline gap-1">
-                <span class="text-4xl font-bold text-gray-900">
+                <span class="text-4xl font-bold text-gray-900 dark:text-white">
                   {tier.price}
                 </span>
-                <span class="text-gray-500">/{tier.period}</span>
+                <span class="text-gray-500 dark:text-gray-400">/{tier.period}</span>
               </div>
             </div>
 
             <ul class="space-y-4 mb-8 flex-1">
               {tier.features.map((feature) => (
-                <li class="flex items-start gap-3 text-gray-600">
+                <li class="flex items-start gap-3 text-gray-600 dark:text-gray-300">
                   <svg
                     class={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.popular ? 'text-blue-600' : 'text-gray-400'}`}
                     fill="none"
@@ -74,7 +74,7 @@ import { PRICING_TIERS } from '@utils/constants';
               class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 tier.popular
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
               }`}
             >
               {tier.cta}
