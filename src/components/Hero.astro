@@ -122,13 +122,22 @@ const t = useTranslations(lang);
         <div
           class="rounded-xl lg:rounded-2xl bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-gray-900/10 dark:ring-white/10 overflow-hidden"
         >
-          <img
-            src="/landing-saas/images/hero-dashboard.png"
-            alt="TeamSync Dashboard Interface"
-            class="w-full h-auto object-cover"
-            width="1200"
-            height="800"
-          />
+          <picture>
+            <source
+              srcset="/landing-saas/images/hero-dashboard.webp"
+              type="image/webp"
+            />
+            <img
+              src="/landing-saas/images/hero-dashboard.png"
+              alt="TeamSync Dashboard Interface"
+              class="w-full h-auto object-cover"
+              width="1200"
+              height="800"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
 
