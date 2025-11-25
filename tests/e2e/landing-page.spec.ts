@@ -24,10 +24,10 @@ test.describe.skip('Landing Page', () => {
 
     // Check for hero content
     await expect(
-      page.getByRole('heading', { name: /Manage your remote team/i }),
+      page.getByRole('heading', { name: /Manage your remote team/i })
     ).toBeVisible();
     await expect(
-      page.getByRole('button', { name: /Start Free Trial/i }),
+      page.getByRole('button', { name: /Start Free Trial/i })
     ).toBeVisible();
   });
 
