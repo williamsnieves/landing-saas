@@ -3,6 +3,14 @@
 
 @import 'tailwindcss';
 
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+}
+
+/* Enable dark mode with class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Base Styles */
 * {
   box-sizing: border-box;
