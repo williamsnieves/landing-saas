@@ -14,15 +14,15 @@ Based on Lighthouse report: `williamsnieves.github.io-20251125T205825.json`
 
 ### Core Web Vitals (Before Optimization)
 
-| Metric | Value | Score | Status |
-|--------|-------|-------|--------|
-| **FCP** (First Contentful Paint) | 1.2s | 0.76 | ✅ Good |
-| **LCP** (Largest Contentful Paint) | 1.3s | 0.86 | ✅ Excellent |
-| **Speed Index** | 1.3s | 0.90 | ✅ Excellent |
-| **TBT** (Total Blocking Time) | 240ms | 0.72 | ⚠️ Needs Improvement |
-| **Max Potential FID** | 300ms | 0.35 | 🔴 Poor |
-| **CLS** (Cumulative Layout Shift) | 0 | 1.0 | ✅ Perfect |
-| **TTI** (Time to Interactive) | 1.5s | 0.99 | ✅ Excellent |
+| Metric                             | Value | Score | Status               |
+| ---------------------------------- | ----- | ----- | -------------------- |
+| **FCP** (First Contentful Paint)   | 1.2s  | 0.76  | ✅ Good              |
+| **LCP** (Largest Contentful Paint) | 1.3s  | 0.86  | ✅ Excellent         |
+| **Speed Index**                    | 1.3s  | 0.90  | ✅ Excellent         |
+| **TBT** (Total Blocking Time)      | 240ms | 0.72  | ⚠️ Needs Improvement |
+| **Max Potential FID**              | 300ms | 0.35  | 🔴 Poor              |
+| **CLS** (Cumulative Layout Shift)  | 0     | 1.0   | ✅ Perfect           |
+| **TTI** (Time to Interactive)      | 1.5s  | 0.99  | ✅ Excellent         |
 
 ### Main Issues Identified
 
@@ -66,6 +66,7 @@ Based on Lighthouse report: `williamsnieves.github.io-20251125T205825.json`
 ```
 
 **Impact:**
+
 - ⚡ Reduces font loading time by ~140ms
 - 🎯 Improves FCP and LCP
 - ✅ Fixes Lighthouse "Preconnect to required origins" audit
@@ -82,6 +83,7 @@ Based on Lighthouse report: `williamsnieves.github.io-20251125T205825.json`
 ```
 
 **Impact:**
+
 - ⚡ Text visible immediately with system fonts
 - 🎯 Prevents FOIT (Flash of Invisible Text)
 - ✅ Improves FCP by showing content faster
@@ -96,10 +98,7 @@ Based on Lighthouse report: `williamsnieves.github.io-20251125T205825.json`
 
 ```html
 <picture>
-  <source
-    srcset="/landing-saas/images/hero-dashboard.webp"
-    type="image/webp"
-  />
+  <source srcset="/landing-saas/images/hero-dashboard.webp" type="image/webp" />
   <img
     src="/landing-saas/images/hero-dashboard.png"
     alt="TeamSync Dashboard Interface"
@@ -113,11 +112,13 @@ Based on Lighthouse report: `williamsnieves.github.io-20251125T205825.json`
 ```
 
 **Results:**
+
 - 📊 **Original PNG:** 458.85 KB
 - 📊 **Optimized WebP:** 35.48 KB
 - 💾 **Reduction:** 92.3% (423 KB saved!)
 
 **Impact:**
+
 - ⚡ Massive bandwidth savings
 - 🎯 Significantly improves LCP
 - ✅ Fixes "Modern image formats" audit
@@ -156,6 +157,7 @@ vite: {
 ```
 
 **Impact:**
+
 - 🗜️ Aggressive JavaScript minification
 - 🧹 Removes console.log and debugger statements
 - 📦 Optimized chunk splitting
@@ -169,6 +171,7 @@ vite: {
 **File:** `src/layouts/Layout.astro`
 
 **Before:**
+
 ```javascript
 const theme = (() => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -185,8 +188,9 @@ if (theme === 'dark') {
 ```
 
 **After:**
+
 ```javascript
-(function() {
+(function () {
   const theme = localStorage.getItem('theme') || 'light';
   if (theme === 'dark') {
     document.documentElement.classList.add('dark');
@@ -196,6 +200,7 @@ if (theme === 'dark') {
 ```
 
 **Impact:**
+
 - ⚡ Reduced execution time
 - 🎯 Fewer DOM operations
 - ✅ Improves TBT
@@ -218,6 +223,7 @@ if (theme === 'dark') {
 ```
 
 **Impact:**
+
 - 🚀 1-year cache for static assets
 - 💾 Reduces repeat visitor load times
 - ✅ Improves "Uses long cache TTL" audit
@@ -229,11 +235,13 @@ if (theme === 'dark') {
 **File:** `scripts/optimize-images.cjs`
 
 Automated script using Sharp library to:
+
 - Convert PNG to WebP
 - Optimize quality (80%)
 - Maintain visual fidelity
 
 **Usage:**
+
 ```bash
 node scripts/optimize-images.cjs
 ```
@@ -244,13 +252,13 @@ node scripts/optimize-images.cjs
 
 ### Estimated New Scores
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| **FCP** | 1.2s (0.76) | ~0.9s (0.95+) | ⬆️ +140ms faster |
-| **LCP** | 1.3s (0.86) | ~0.8s (1.0) | ⬆️ +500ms faster |
-| **TBT** | 240ms (0.72) | ~100ms (0.95+) | ⬆️ +140ms faster |
+| Metric      | Before       | After          | Improvement      |
+| ----------- | ------------ | -------------- | ---------------- |
+| **FCP**     | 1.2s (0.76)  | ~0.9s (0.95+)  | ⬆️ +140ms faster |
+| **LCP**     | 1.3s (0.86)  | ~0.8s (1.0)    | ⬆️ +500ms faster |
+| **TBT**     | 240ms (0.72) | ~100ms (0.95+) | ⬆️ +140ms faster |
 | **Max FID** | 300ms (0.35) | ~150ms (0.80+) | ⬆️ +150ms faster |
-| **Overall** | ~75-80 | **95-100** | ⬆️ +20 points |
+| **Overall** | ~75-80       | **95-100**     | ⬆️ +20 points    |
 
 ### Key Improvements
 
