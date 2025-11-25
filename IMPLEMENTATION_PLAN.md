@@ -5,7 +5,7 @@
 **Status**: Ready for Implementation  
 **Previous Phase**: Phase 0 (agents.md) - ✅ Approved  
 **Current Phase**: Phase 1 - Implementation Planning  
-**Next Phase**: Phase 2 - Section-by-Section Implementation  
+**Next Phase**: Phase 2 - Section-by-Section Implementation
 
 ---
 
@@ -28,12 +28,14 @@
 ### 1.1 Initialize Astro Project
 
 **Command**:
+
 ```bash
 cd /Users/williansnieves/Documents/practices/practicas-ia/landing-saas
 npm create astro@latest . -- --template minimal --yes --typescript strict
 ```
 
 **What this does**:
+
 - Initializes Astro in the existing `landing-saas` directory
 - Uses minimal template (clean slate)
 - Enables TypeScript with strict mode
@@ -244,8 +246,8 @@ export default {
         display: ['Poppins', 'system-ui', 'sans-serif'],
       },
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -307,11 +309,7 @@ export default defineConfig({
 
 ```javascript
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    'plugin:astro/recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:astro/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -398,6 +396,7 @@ playwright/.cache/
 Each section will be implemented, tested, and approved before moving to the next.
 
 #### 2.1 Infrastructure Setup ⚙️
+
 - Initialize Astro project
 - Configure Tailwind CSS
 - Set up TypeScript
@@ -406,6 +405,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Working dev environment
 
 #### 2.2 Layout Base + Tailwind 🎨
+
 - Create `Layout.astro` with SEO meta tags
 - Set up global styles
 - Configure custom Tailwind theme
@@ -413,6 +413,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Base layout ready for sections
 
 #### 2.3 Hero Section 🚀
+
 - Create `Hero.astro` component
 - Implement responsive hero design
 - Add CTA buttons
@@ -420,6 +421,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Functional hero section
 
 #### 2.4 Features Section ✨
+
 - Create `Features.astro` component
 - Design feature cards
 - Add feature icons
@@ -427,6 +429,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Features showcase
 
 #### 2.5 Pricing Section 💰
+
 - Create `Pricing.astro` component
 - Design pricing cards
 - Add pricing tiers (Free, Pro, Enterprise)
@@ -434,6 +437,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Pricing comparison
 
 #### 2.6 FAQ Section ❓
+
 - Create `FAQ.astro` component
 - Implement accordion functionality
 - Add common questions
@@ -441,6 +445,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Interactive FAQ
 
 #### 2.7 Contact Form 📧
+
 - Create `ContactForm.astro` component
 - Integrate Formspree
 - Add form validation
@@ -448,6 +453,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Working contact form
 
 #### 2.8 Footer 🔗
+
 - Create `Footer.astro` component
 - Add navigation links
 - Include social media links
@@ -455,6 +461,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Complete footer
 
 #### 2.9 SEO Optimization 🔍
+
 - Add meta tags to Layout
 - Create Open Graph tags
 - Add JSON-LD structured data
@@ -463,6 +470,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: SEO-optimized site
 
 #### 2.10 E2E Testing 🧪
+
 - Write Playwright tests for all sections
 - Test responsive behavior
 - Test form submission
@@ -470,6 +478,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Comprehensive test suite
 
 #### 2.11 CI/CD Pipeline 🚀
+
 - Create GitHub Actions workflow
 - Configure build process
 - Set up E2E testing in CI
@@ -477,6 +486,7 @@ Each section will be implemented, tested, and approved before moving to the next
 - **Deliverable**: Automated deployment
 
 #### 2.12 Final Deploy 🎉
+
 - Run full test suite
 - Perform accessibility audit
 - Check Lighthouse scores
@@ -492,6 +502,7 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Capture attention and communicate value proposition
 
 **Elements**:
+
 - Main headline (h1)
 - Subheadline (p)
 - Primary CTA button ("Start Free Trial")
@@ -500,10 +511,12 @@ Each section will be implemented, tested, and approved before moving to the next
 - Trust indicators (e.g., "Trusted by 10,000+ teams")
 
 **Layout**:
+
 - Desktop: Two columns (text left, image right)
 - Mobile: Single column (text top, image bottom)
 
 **Colors**:
+
 - Background: gradient from primary-50 to white
 - Headline: gray-900
 - CTA: primary-600 with hover effects
@@ -513,12 +526,14 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Showcase key product features
 
 **Elements**:
+
 - Section heading (h2)
 - Section subheading (p)
 - 6 feature cards in grid layout
 - Each card: icon, title, description
 
 **Features to Highlight**:
+
 1. Real-time Collaboration
 2. Task Management
 3. Time Tracking
@@ -527,6 +542,7 @@ Each section will be implemented, tested, and approved before moving to the next
 6. Integrations
 
 **Layout**:
+
 - Desktop: 3 columns
 - Tablet: 2 columns
 - Mobile: 1 column
@@ -536,16 +552,19 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Present pricing options clearly
 
 **Elements**:
+
 - Section heading (h2)
 - 3 pricing tiers
 - Each tier: name, price, features list, CTA button
 
 **Pricing Tiers**:
+
 1. **Free**: $0/month - Basic features, up to 5 users
 2. **Pro**: $29/month - Advanced features, up to 50 users (Popular)
 3. **Enterprise**: Custom - Unlimited users, custom features
 
 **Layout**:
+
 - Desktop: 3 columns
 - Mobile: Stacked cards with scroll
 
@@ -554,11 +573,13 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Address common questions
 
 **Elements**:
+
 - Section heading (h2)
 - Accordion with 8-10 questions
 - Each item: question (button), answer (collapsible)
 
 **Sample Questions**:
+
 1. How does the free trial work?
 2. Can I change plans later?
 3. Is my data secure?
@@ -569,6 +590,7 @@ Each section will be implemented, tested, and approved before moving to the next
 8. How do I cancel my subscription?
 
 **Interaction**:
+
 - Click to expand/collapse
 - Only one open at a time (optional)
 - Smooth animations
@@ -579,6 +601,7 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Capture leads and inquiries
 
 **Fields**:
+
 - Name (required)
 - Email (required, validated)
 - Company (optional)
@@ -586,12 +609,14 @@ Each section will be implemented, tested, and approved before moving to the next
 - Submit button
 
 **Validation**:
+
 - Client-side HTML5 validation
 - Email format validation
 - Required field indicators
 - Error messages
 
 **Success Flow**:
+
 - Redirect to `/thank-you` page
 - Display success message
 - Clear form (if staying on page)
@@ -601,12 +626,14 @@ Each section will be implemented, tested, and approved before moving to the next
 **Purpose**: Provide navigation and legal links
 
 **Sections**:
+
 1. **Product**: Features, Pricing, Integrations
 2. **Company**: About, Blog, Careers
 3. **Support**: Help Center, Contact, Status
 4. **Legal**: Privacy Policy, Terms of Service
 
 **Additional Elements**:
+
 - Logo
 - Social media icons (Twitter, LinkedIn, GitHub)
 - Copyright notice
@@ -619,24 +646,29 @@ Each section will be implemented, tested, and approved before moving to the next
 ### 6.1 Color Palette
 
 **Primary Colors** (Blue):
+
 - Used for CTAs, links, accents
 - Shades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
 
 **Secondary Colors** (Purple):
+
 - Used for highlights, badges
 - Shades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
 
 **Neutral Colors**:
+
 - Gray scale for text and backgrounds
 - White and near-white for backgrounds
 
 ### 6.2 Typography
 
 **Fonts**:
+
 - Display/Headings: Poppins (600, 700)
 - Body: Inter (400, 500, 600)
 
 **Scale**:
+
 - h1: text-5xl md:text-6xl (48px-60px)
 - h2: text-4xl md:text-5xl (36px-48px)
 - h3: text-2xl md:text-3xl (24px-30px)
@@ -646,22 +678,26 @@ Each section will be implemented, tested, and approved before moving to the next
 ### 6.3 Spacing
 
 **Container**:
+
 - Max width: 1280px (max-w-7xl)
 - Padding: px-4 md:px-6 lg:px-8
 
 **Sections**:
+
 - Vertical spacing: py-16 md:py-24 lg:py-32
 - Gap between elements: gap-8 md:gap-12
 
 ### 6.4 Components
 
 **Buttons**:
+
 - Primary: bg-primary-600 hover:bg-primary-700
 - Secondary: border border-primary-600 text-primary-600
 - Size: px-6 py-3 (medium), px-8 py-4 (large)
 - Border radius: rounded-lg
 
 **Cards**:
+
 - Background: bg-white
 - Border: border border-gray-200
 - Shadow: shadow-lg hover:shadow-xl
@@ -675,6 +711,7 @@ Each section will be implemented, tested, and approved before moving to the next
 ### 7.1 Test Coverage
 
 Each section requires:
+
 - ✅ Visual regression test
 - ✅ Interaction test (if applicable)
 - ✅ Responsive test (mobile, tablet, desktop)
@@ -683,35 +720,41 @@ Each section requires:
 ### 7.2 Test Files
 
 **hero.spec.ts**:
+
 - Hero heading is visible
 - CTA buttons are clickable
 - Hero image loads
 - Responsive layout works
 
 **features.spec.ts**:
+
 - All 6 feature cards render
 - Icons are visible
 - Grid layout is responsive
 
 **pricing.spec.ts**:
+
 - All 3 pricing tiers display
 - Popular badge shows on Pro tier
 - CTA buttons work
 - Responsive layout
 
 **faq.spec.ts**:
+
 - All FAQ items render
 - Accordion expands/collapses
 - Keyboard navigation works
 - Only one item open at a time
 
 **contact-form.spec.ts**:
+
 - Form fields are present
 - Validation works
 - Submission succeeds
 - Redirect to thank-you page
 
 **navigation.spec.ts**:
+
 - Navigation links work
 - Smooth scroll to sections
 - Mobile menu toggles
@@ -720,6 +763,7 @@ Each section requires:
 ### 7.3 Test Execution
 
 **Local**:
+
 ```bash
 npm run test          # Run all tests
 npm run test:ui       # Run with UI
@@ -727,6 +771,7 @@ npm run test:debug    # Debug mode
 ```
 
 **CI/CD**:
+
 - Tests run automatically on push
 - Must pass before deployment
 - Screenshots on failure
@@ -740,6 +785,7 @@ npm run test:debug    # Debug mode
 **File**: `.github/workflows/deploy.yml`
 
 **Triggers**:
+
 - Push to `main` branch
 - Pull request to `main` branch
 
@@ -773,11 +819,13 @@ npm run test:debug    # Debug mode
 ### 8.2 GitHub Pages Setup
 
 **Configuration**:
+
 - Source: GitHub Actions
 - Branch: gh-pages (auto-created)
 - Custom domain: Optional
 
 **Build Settings**:
+
 - Build command: `npm run build`
 - Output directory: `dist/`
 - Base path: `/landing-saas/`
@@ -788,22 +836,22 @@ npm run test:debug    # Debug mode
 
 ### Estimated Timeline
 
-| Phase | Task | Duration | Status |
-|-------|------|----------|--------|
-| 0 | Generate agents.md | - | ✅ Complete |
-| 1 | Create implementation plan | - | ✅ Complete |
-| 2.1 | Infrastructure setup | 30 min | ⏳ Pending |
-| 2.2 | Layout base + Tailwind | 30 min | ⏳ Pending |
-| 2.3 | Hero section | 45 min | ⏳ Pending |
-| 2.4 | Features section | 45 min | ⏳ Pending |
-| 2.5 | Pricing section | 45 min | ⏳ Pending |
-| 2.6 | FAQ section | 45 min | ⏳ Pending |
-| 2.7 | Contact form | 1 hour | ⏳ Pending |
-| 2.8 | Footer | 30 min | ⏳ Pending |
-| 2.9 | SEO optimization | 30 min | ⏳ Pending |
-| 2.10 | E2E testing | 1.5 hours | ⏳ Pending |
-| 2.11 | CI/CD pipeline | 45 min | ⏳ Pending |
-| 2.12 | Final deploy | 30 min | ⏳ Pending |
+| Phase | Task                       | Duration  | Status      |
+| ----- | -------------------------- | --------- | ----------- |
+| 0     | Generate agents.md         | -         | ✅ Complete |
+| 1     | Create implementation plan | -         | ✅ Complete |
+| 2.1   | Infrastructure setup       | 30 min    | ⏳ Pending  |
+| 2.2   | Layout base + Tailwind     | 30 min    | ⏳ Pending  |
+| 2.3   | Hero section               | 45 min    | ⏳ Pending  |
+| 2.4   | Features section           | 45 min    | ⏳ Pending  |
+| 2.5   | Pricing section            | 45 min    | ⏳ Pending  |
+| 2.6   | FAQ section                | 45 min    | ⏳ Pending  |
+| 2.7   | Contact form               | 1 hour    | ⏳ Pending  |
+| 2.8   | Footer                     | 30 min    | ⏳ Pending  |
+| 2.9   | SEO optimization           | 30 min    | ⏳ Pending  |
+| 2.10  | E2E testing                | 1.5 hours | ⏳ Pending  |
+| 2.11  | CI/CD pipeline             | 45 min    | ⏳ Pending  |
+| 2.12  | Final deploy               | 30 min    | ⏳ Pending  |
 
 **Total Estimated Time**: 8-10 hours
 
@@ -823,17 +871,20 @@ npm run test:debug    # Debug mode
 ### 10.1 Copywriting Guidelines
 
 **Tone**:
+
 - Professional but friendly
 - Clear and concise
 - Action-oriented
 - Benefit-focused
 
 **Hero Headline Examples**:
+
 - "Manage Your Remote Team with Confidence"
 - "The All-in-One Platform for Distributed Teams"
 - "Work Together, Anywhere"
 
 **Value Propositions**:
+
 - Increase productivity by 40%
 - Save 10+ hours per week
 - Trusted by 10,000+ teams
@@ -842,11 +893,13 @@ npm run test:debug    # Debug mode
 ### 10.2 Call-to-Action (CTA) Text
 
 **Primary CTAs**:
+
 - "Start Free Trial"
 - "Get Started Free"
 - "Try It Free"
 
 **Secondary CTAs**:
+
 - "Watch Demo"
 - "Learn More"
 - "See How It Works"
@@ -854,6 +907,7 @@ npm run test:debug    # Debug mode
 ### 10.3 Social Proof
 
 **Trust Indicators**:
+
 - Customer logos (if available)
 - Testimonials (2-3 quotes)
 - Statistics (users, countries, hours saved)
@@ -944,7 +998,6 @@ Before I begin implementation, please confirm:
 
 ---
 
-*Document Version: 1.0*  
-*Created: November 22, 2025*  
-*Status: Awaiting Approval for Phase 2*
-
+_Document Version: 1.0_  
+_Created: November 22, 2025_  
+_Status: Awaiting Approval for Phase 2_
