@@ -12,6 +12,7 @@ export default defineConfig({
     assets: 'assets',
   },
   vite: {
+    // @ts-ignore - Vite plugin type mismatch between Astro's bundled Vite and TailwindCSS
     plugins: [tailwindcss()],
     build: {
       cssMinify: true,
