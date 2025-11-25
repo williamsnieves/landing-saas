@@ -7,6 +7,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://YOUR_USERNAME.github.io',
   base: '/landing-saas',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'de', 'pt', 'fr', 'zh'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   output: 'static',
   build: {
     assets: 'assets',
