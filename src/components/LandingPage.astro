@@ -1,0 +1,32 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Navigation from '@components/Navigation.astro';
+import Hero from '@components/Hero.astro';
+import Features from '@components/Features.astro';
+import Pricing from '@components/Pricing.astro';
+import FAQ from '@components/FAQ.astro';
+import ContactForm from '@components/ContactForm.astro';
+import Footer from '@components/Footer.astro';
+
+interface Props {
+  lang: 'en' | 'es' | 'de' | 'pt' | 'fr' | 'zh';
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout title="TeamSync - Manage your remote team" lang={lang}>
+  <Navigation lang={lang} />
+
+  <!-- Spacer for fixed navigation (h-20 = 80px) -->
+  <div class="h-20"></div>
+
+  <main>
+    <Hero lang={lang} />
+    <Features lang={lang} />
+    <Pricing lang={lang} />
+    <FAQ lang={lang} />
+    <ContactForm lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

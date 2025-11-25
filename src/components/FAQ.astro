@@ -1,5 +1,31 @@
 ---
-import { FAQ_ITEMS } from '@utils/constants';
+import { useTranslations } from '@utils/i18n';
+
+interface Props {
+  lang: 'en' | 'es' | 'de' | 'pt' | 'fr' | 'zh';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const faqItems = [
+  {
+    question: t('faq.q1'),
+    answer: t('faq.a1'),
+  },
+  {
+    question: t('faq.q2'),
+    answer: t('faq.a2'),
+  },
+  {
+    question: t('faq.q3'),
+    answer: t('faq.a3'),
+  },
+  {
+    question: t('faq.q4'),
+    answer: t('faq.a4'),
+  },
+];
 ---
 
 <section id="faq" class="py-24 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden transition-colors duration-300">
@@ -9,16 +35,15 @@ import { FAQ_ITEMS } from '@utils/constants';
       <h2
         class="text-base font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase mb-3"
       >
-        FAQ
+        {t('faq.badge')}
       </h2>
       <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-        Frequently asked questions
+        {t('faq.title')}
       </p>
       <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-        Everything you need to know about TeamSync. Can't find the answer you're
-        looking for?
+        {t('faq.subtitle')}
         <a href="#contact" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
-          >Contact our team</a
+          >{t('faq.contact')}</a
         >.
       </p>
     </div>
@@ -26,7 +51,7 @@ import { FAQ_ITEMS } from '@utils/constants';
     <!-- FAQ Accordion -->
     <div class="space-y-4">
       {
-        FAQ_ITEMS.map((item, index) => (
+        faqItems.map((item, index) => (
           <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-200 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md">
             <button
               type="button"

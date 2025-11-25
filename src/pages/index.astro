@@ -1,26 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Navigation from '@components/Navigation.astro';
-import Hero from '@components/Hero.astro';
-import Features from '@components/Features.astro';
-import Pricing from '@components/Pricing.astro';
-import FAQ from '@components/FAQ.astro';
-import ContactForm from '@components/ContactForm.astro';
-import Footer from '@components/Footer.astro';
+import LandingPage from '@components/LandingPage.astro';
 ---
 
-<Layout>
-  <Navigation />
-
-  <!-- Spacer for fixed navigation (h-20 = 80px) -->
-  <div class="h-20"></div>
-
-  <main>
-    <Hero />
-    <Features />
-    <Pricing />
-    <FAQ />
-    <ContactForm />
-  </main>
-  <Footer />
-</Layout>
+<LandingPage lang="en" />

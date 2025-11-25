@@ -1,5 +1,61 @@
 ---
-import { PRICING_TIERS } from '@utils/constants';
+import { useTranslations } from '@utils/i18n';
+
+interface Props {
+  lang: 'en' | 'es' | 'de' | 'pt' | 'fr' | 'zh';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const pricingTiers = [
+  {
+    name: t('pricing.starter.name'),
+    price: '$0',
+    period: t('pricing.period'),
+    description: t('pricing.starter.desc'),
+    features: [
+      t('pricing.feature.users'),
+      t('pricing.feature.projects'),
+      t('pricing.feature.storage'),
+      t('pricing.feature.support'),
+    ],
+    cta: t('pricing.starter.cta'),
+    popular: false,
+  },
+  {
+    name: t('pricing.pro.name'),
+    price: '$29',
+    period: t('pricing.period'),
+    description: t('pricing.pro.desc'),
+    features: [
+      t('pricing.feature.users.20'),
+      t('pricing.feature.projects.adv'),
+      t('pricing.feature.storage.20'),
+      t('pricing.feature.support.prio'),
+      t('pricing.feature.analytics'),
+    ],
+    cta: t('pricing.pro.cta'),
+    popular: true,
+  },
+  {
+    name: t('pricing.enterprise.name'),
+    price: '$99',
+    period: t('pricing.period'),
+    description: t('pricing.enterprise.desc'),
+    features: [
+      t('pricing.feature.users.unlimited'),
+      t('pricing.feature.projects.adv'),
+      t('pricing.feature.storage.unlimited'),
+      t('pricing.feature.support.247'),
+      t('pricing.feature.analytics.adv'),
+      t('pricing.feature.custom'),
+      t('pricing.feature.sso'),
+    ],
+    cta: t('pricing.enterprise.cta'),
+    popular: false,
+  },
+];
 ---
 
 <section id="pricing" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
@@ -9,21 +65,20 @@ import { PRICING_TIERS } from '@utils/constants';
       <h2
         class="text-base font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase mb-3"
       >
-        Pricing
+        {t('pricing.badge')}
       </h2>
       <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-        Simple, transparent pricing
+        {t('pricing.title')}
       </p>
       <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-        Choose the plan that's right for your team. No hidden fees, cancel
-        anytime.
+        {t('pricing.subtitle')}
       </p>
     </div>
 
     <!-- Pricing Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       {
-        PRICING_TIERS.map((tier) => (
+        pricingTiers.map((tier) => (
           <div
             class={`relative rounded-2xl p-8 transition-all duration-300 flex flex-col ${
               tier.popular
@@ -33,7 +88,7 @@ import { PRICING_TIERS } from '@utils/constants';
           >
             {tier.popular && (
               <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md whitespace-nowrap">
-                Most Popular
+                {t('pricing.pro.popular')}
               </div>
             )}
 
@@ -70,7 +125,7 @@ import { PRICING_TIERS } from '@utils/constants';
             </ul>
 
             <a
-              href={tier.cta === 'Contact Sales' ? '#contact' : '#get-started'}
+              href={tier.cta === t('pricing.enterprise.cta') ? '#contact' : '#get-started'}
               class={`w-full inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
                 tier.popular
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg'
