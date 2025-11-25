@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:4321',
+    baseURL: 'http://localhost:4321/landing-saas',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -36,7 +36,8 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npm run preview',
-    url: 'http://localhost:4321',
+    url: 'http://localhost:4321/landing-saas',
     reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000, // 120 seconds
   },
 });
