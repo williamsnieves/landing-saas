@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 /**
  * Image Optimization Script
@@ -65,7 +66,7 @@ try {
     .catch((err) => {
       console.error('❌ Error creating WebP:', err.message);
     });
-} catch (e) {
+} catch {
   console.log('ℹ️  Sharp package not installed.');
   console.log('   To auto-optimize, run: npm install --save-dev sharp');
   console.log('   Then run this script again.\n');
